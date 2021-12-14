@@ -40,3 +40,7 @@ The docker compose yaml will contain three services/containers
 3. Redis
 
 Once the environment is set up, next will be reading through the documentation on celery.
+
+After wrangling with the environment set up for a little while, I'm now able to get into the structure of the project.
+
+Will start by testing that all the services behave as expected. I'm going to use Flask to accomplish this project and will use redis as both the message broker and cache for the messages.
