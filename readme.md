@@ -44,3 +44,7 @@ Once the environment is set up, next will be reading through the documentation o
 After wrangling with the environment set up for a little while, I'm now able to get into the structure of the project.
 
 Will start by testing that all the services behave as expected. I'm going to use Flask to accomplish this project and will use redis as both the message broker and cache for the messages.
+
+After some guidance on my iteration cycle, I was able to spend some time understanding celery and workers and what I'm trying to achieve, I did this initially all in my local environment working through the documentation and using the REPL to rapidly test my approach. Working fine in my local environment but not quite working within Docker, got some ideas for what's causing the issue.
+
+Now to tie this all together and create an API, that meets the original task.
