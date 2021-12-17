@@ -26,9 +26,9 @@ def add():
     return make_response(jsonify({"job_id": result_task.task_id}))
 
 
-@app.route("/task/<task_id>", methods=["GET"])
-def check_task_status(task_id):
-    task = add_task.AsyncResult(task_id)
+@app.route("/task/<job_id>", methods=["GET"])
+def check_task_status(job_id):
+    task = add_task.AsyncResult(job_id)
     output = {
         "job_id": task.id,
         "state": task.state,
