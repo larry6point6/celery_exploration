@@ -73,7 +73,13 @@ This will return something similar to this
 }
 ```
 
-With the job_id, you can check the status of the job using the below endpoint, depending on the status of the job you will get back.
+With the job_id, you can check the status of the job using the below endpoint,
+
+```
+http://localhost:5000/task/<job_id>
+```
+
+depending on the status of the job you will get back.
 
 ```json
 {
