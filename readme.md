@@ -48,3 +48,43 @@ Will start by testing that all the services behave as expected. I'm going to use
 After some guidance on my iteration cycle, I was able to spend some time understanding celery and workers and what I'm trying to achieve, I did this initially all in my local environment working through the documentation and using the REPL to rapidly test my approach. Working fine in my local environment but not quite working within Docker, got some ideas for what's causing the issue.
 
 Now to tie this all together and create an API, that meets the original task.
+
+Working through the API and realised that it would be quite nice to have a log file baked in so, created a log file and updated the celery command in the docker compose file. So instead of having to check the terminal, you can view what's happening in the log file.
+
+80% of the way there can accomplish the task set out in a limited way, only via using the query string approach, attempting to use JSON presents an issue with function. My varying attempts are in the celery log.
+
+To explore this project, you can use the following commands.
+
+```docker-compose build``` in the root directory of the repo, to build the image.
+
+```docker-compose up -d``` to spin up the containers in the background.
+
+```docker-compose ps``` to check the containers have spun up correctly, can also look at the dashboard within Docker Desktop.
+
+You can add a task to be sent to the celery worker like so on your device navigate to the below endpoint
+
+```http://localhost:5000/add?a=3&b=4```
+
+This will return something similar to this
+
+```json
+{
+  "job_id": "6a0fdb54-910d-448b-84fd-3921c062efbc"
+}
+```
+
+With the job_id, you can check the status of the job using the below endpoint, depending on the status of the job you will get back.
+
+```json
+{
+    "result": null
+    }
+```
+
+or
+
+```json
+{
+  "result": 17
+}
+```

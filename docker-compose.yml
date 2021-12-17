@@ -26,7 +26,7 @@ services:
       context: ./api
     hostname: worker
     entrypoint: celery
-    command: -A celery_app.celery worker --loglevel=info
+    command: -A celery_app.celery worker --loglevel=info --logfile=celery.log
     volumes:
       - ./api:/app
     environment:
