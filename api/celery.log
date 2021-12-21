@@ -206,3 +206,7 @@ TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
 [2021-12-17 17:31:11,144: INFO/ForkPoolWorker-1] Task celery_app.add_task[dbcea43f-dd0c-4ac9-99cb-de4a897d75a7] succeeded in 100.10138749999896s: 17
 [2021-12-17 17:40:59,691: INFO/MainProcess] Task celery_app.add_task[ac0e1290-0f7b-493a-b7e5-b757898c8214] received
 [2021-12-17 17:42:39,652: INFO/ForkPoolWorker-1] Task celery_app.add_task[ac0e1290-0f7b-493a-b7e5-b757898c8214] succeeded in 100.05344590000095s: 7
+[2021-12-21 14:06:00,528: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-12-21 14:06:00,555: INFO/MainProcess] mingle: searching for neighbors
+[2021-12-21 14:06:01,635: INFO/MainProcess] mingle: all alone
+[2021-12-21 14:06:01,657: INFO/MainProcess] celery@worker ready.
