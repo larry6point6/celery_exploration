@@ -11,6 +11,8 @@ services:
       - FLASK_DEBUG=1
       - CELERY_BROKER_URL=redis://redis:6379/0
       - CELERY_RESULT_BACKEND=redis://redis:6379/0
+    stdin_open: true
+    tty: true
     links:
       - redis
     depends_on:
@@ -24,7 +26,7 @@ services:
       context: ./api
     hostname: worker
     entrypoint: celery
-    command: -A celery_app.celery worker --loglevel=info
+    command: -A celery_app.celery worker --loglevel=info --logfile=celery.log
     volumes:
       - ./api:/app
     environment:

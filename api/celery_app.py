@@ -8,6 +8,6 @@ celery = Celery(
 
 
 @celery.task()
-def add(x, y):
-    sleep(100)
-    return x + y
+def add_task(x, y):
+    sleep(15)
+    return int(x) + (y)
