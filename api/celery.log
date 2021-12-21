@@ -210,3 +210,5 @@ TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
 [2021-12-21 14:06:00,555: INFO/MainProcess] mingle: searching for neighbors
 [2021-12-21 14:06:01,635: INFO/MainProcess] mingle: all alone
 [2021-12-21 14:06:01,657: INFO/MainProcess] celery@worker ready.
+[2021-12-21 14:17:56,561: INFO/MainProcess] Task celery_app.add_task[322b636a-808d-4d7d-87d3-8caef6973d11] received
+[2021-12-21 14:18:11,638: INFO/ForkPoolWorker-1] Task celery_app.add_task[322b636a-808d-4d7d-87d3-8caef6973d11] succeeded in 15.081349063999824s: 10
