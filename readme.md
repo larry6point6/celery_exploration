@@ -58,7 +58,7 @@ To explore this project, you can use the following commands.
 ```docker-compose build``` in the root directory of the repo, to build the image.
 
 ```docker-compose up -d``` to spin up the containers in the background. Please note if the port 5000 is being used by anything else you will get a port already in use exception, easily solved if it's a docker container by stopping that container like so
-```docker stop <container_id> (first few letters are fine)``` or s
+```docker stop <container_id> (first few letters are fine)``` or cancelling whatever process is running using port 5000.
 
 ```docker-compose ps``` to check the containers have spun up correctly, can also look at the dashboard within Docker Desktop.
 
