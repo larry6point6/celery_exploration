@@ -79,11 +79,19 @@ telnet: Unable to connect to remote host
 
 Taking on the advice from Matt, I exposed the port 4444 in the dockerfile for the web container. Tried to connect to rpdb and got a similar error to the above
 
-```
-#telnet 0.0.0.0 4444
+``` bash
+telnet 0.0.0.0 4444
 Trying 0.0.0.0...
 telnet: connect to address 0.0.0.0: Connection refused
 telnet: Unable to connect to remote host
 ```
 
-Next was to map the port on the container in the docker compose
+Next was to map the port on the container in the docker compose, which seemed to move us forward beyond the error of being unable to connect, however as soon as I connect, the connection is closed by a foreign host
+
+``` bash
+telnet 0.0.0.0 4444
+Trying 0.0.0.0...
+Connected to 0.0.0.0.
+Escape character is '^]'.
+Connection closed by foreign host.
+```
