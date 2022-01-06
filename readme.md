@@ -44,7 +44,7 @@ or
 }
 ```
 
-An additional task was to enable the worker to be debugged using Python's remote debugger, I've tried to get this working but still can't quite get the networking and the ports working correctly. This is what I've tried so far. I'll provide some screenshots and explanation of my thought process.
+An additional task was to enable the worker to be debugged using Python's remote debugger, I've tried to get this working but still can't quite get the networking and the ports working correctly. This is what I've tried so far. I'll provide some snippets and explanation of my thought process.
 
 I started [here](https://pypi.org/project/rpdb/) at the pypi package pge for rpdb and followed the steps,
 adding a breakpoint to the add function in ```celery_app.py``` by adding the following line
