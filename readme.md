@@ -86,7 +86,7 @@ telnet: connect to address 0.0.0.0: Connection refused
 telnet: Unable to connect to remote host
 ```
 
-Next was to map the port on the container in the docker compose, which seemed to move us forward beyond the error of being unable to connect, however as soon as I connect, the connection is closed by a foreign host
+Next was to map the port on the container in the docker compose, which seemed to move us forward beyond the error of being unable to connect, however as soon as I connect, the connection is closed immediately by a foreign host, I think it's something in the networking but I can't quite pin it down
 
 ``` bash
 telnet 0.0.0.0 4444
