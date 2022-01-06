@@ -212,3 +212,37 @@ TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
 [2021-12-21 14:06:01,657: INFO/MainProcess] celery@worker ready.
 [2021-12-21 14:17:56,561: INFO/MainProcess] Task celery_app.add_task[322b636a-808d-4d7d-87d3-8caef6973d11] received
 [2021-12-21 14:18:11,638: INFO/ForkPoolWorker-1] Task celery_app.add_task[322b636a-808d-4d7d-87d3-8caef6973d11] succeeded in 15.081349063999824s: 10
+[2022-01-06 10:06:33,278: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-06 10:06:33,287: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-06 10:06:34,311: INFO/MainProcess] mingle: all alone
+[2022-01-06 10:06:34,330: INFO/MainProcess] celery@worker ready.
+[2022-01-06 10:07:07,438: INFO/MainProcess] Task celery_app.add_task[84e0b291-7764-43b1-b917-1bee007704e7] received
+[2022-01-06 10:07:22,452: INFO/ForkPoolWorker-1] Task celery_app.add_task[84e0b291-7764-43b1-b917-1bee007704e7] succeeded in 15.030010291000053s: 10
+[2022-01-06 10:09:17,395: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-06 10:09:17,409: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-06 10:09:18,415: INFO/MainProcess] mingle: all alone
+[2022-01-06 10:09:18,436: INFO/MainProcess] celery@worker ready.
+[2022-01-06 10:12:57,296: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-06 10:12:57,303: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-06 10:12:58,324: INFO/MainProcess] mingle: all alone
+[2022-01-06 10:12:58,344: INFO/MainProcess] celery@worker ready.
+[2022-01-06 10:13:39,537: INFO/MainProcess] Task celery_app.add_task[ef1cc849-9e10-4eb6-8620-60eef01c7d9f] received
+[2022-01-06 10:13:54,548: WARNING/ForkPoolWorker-1] pdb is running on 127.0.0.1:4444
+[2022-01-06 10:24:52,583: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-06 10:24:52,590: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-06 10:24:53,610: INFO/MainProcess] mingle: all alone
+[2022-01-06 10:24:53,631: INFO/MainProcess] celery@worker ready.
+[2022-01-06 10:25:31,853: INFO/MainProcess] Task celery_app.add_task[c14deab6-9ade-476f-aaff-fff6ab8615e3] received
+[2022-01-06 10:25:46,872: WARNING/ForkPoolWorker-1] pdb is running on 0.0.0.0:4444
+[2022-01-06 10:33:41,565: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-06 10:33:41,576: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-06 10:33:42,596: INFO/MainProcess] mingle: all alone
+[2022-01-06 10:33:42,613: INFO/MainProcess] celery@worker ready.
+[2022-01-06 10:33:46,311: INFO/MainProcess] Task celery_app.add_task[021e345b-84ce-422f-bc14-f56e500869c1] received
+[2022-01-06 10:34:01,329: WARNING/ForkPoolWorker-1] pdb is running on 0.0.0.0:4444
+[2022-01-06 10:41:22,599: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-06 10:41:22,606: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-06 10:41:23,623: INFO/MainProcess] mingle: all alone
+[2022-01-06 10:41:23,640: INFO/MainProcess] celery@worker ready.
+[2022-01-06 10:41:30,208: INFO/MainProcess] Task celery_app.add_task[154867cc-f7d1-40f4-aeef-52f02096d31a] received
+[2022-01-06 10:41:45,268: WARNING/ForkPoolWorker-1] pdb is running on 0.0.0.0:4444

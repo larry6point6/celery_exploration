@@ -1,63 +1,11 @@
-# Experimenting with Celery
-
-I need to create an api that will execute a long process, something along the lines of this asynchronously
-
-```python
-def long_process(a,b):
-    sleep(1000)
-    return a + b
-```
-
-It is expected the user will do something like:
-
-```python
-r = requests.post("http://endpoint/long_process" json={"a":1, "b":2})
-```
-
-and get back a job id, something like the below:
-
-```python
-r.json()
-{"job_id": 2}
-```
-
-which will allow user to then do:
-
-```python
-r = requests.get("http://endpoint/long_process?job_id=2")
-r.json()
-{"result": 2}
-or
-{"result": None}
-```
-
-This is going to be containerised using docker compose, for the services required.
-
-The docker compose yaml will contain three services/containers
-
-1. The API
-2. Celery worker
-3. Redis
-
-Once the environment is set up, next will be reading through the documentation on celery.
-
-After wrangling with the environment set up for a little while, I'm now able to get into the structure of the project.
-
-Will start by testing that all the services behave as expected. I'm going to use Flask to accomplish this project and will use redis as both the message broker and cache for the messages.
-
-After some guidance on my iteration cycle, I was able to spend some time understanding celery and workers and what I'm trying to achieve, I did this initially all in my local environment working through the documentation and using the REPL to rapidly test my approach. Working fine in my local environment but not quite working within Docker, got some ideas for what's causing the issue.
-
-Now to tie this all together and create an API, that meets the original task.
-
-Working through the API and realised that it would be quite nice to have a log file baked in so, created a log file and updated the celery command in the docker compose file. So instead of having to check the terminal, you can view what's happening in the log file.
-
-80% of the way there can accomplish the task set out in a limited way, only via using the query string approach, attempting to use JSON presents an issue with function. My varying attempts are in the celery log.
+# Experimenting Remote Debugger
 
 To explore this project, you can use the following commands.
 
-```docker-compose build``` in the root directory of the repo, to build the image.
+```docker-compose build``` in the root directory of the repo, to build the images.
 
 ```docker-compose up -d``` to spin up the containers in the background. Please note if the port 5000 is being used by anything else you will get a port already in use exception, easily solved if it's a docker container by stopping that container like so
+
 ```docker stop <container_id> (first few letters are fine)``` or s
 
 ```docker-compose ps``` to check the containers have spun up correctly, can also look at the dashboard within Docker Desktop.
@@ -95,3 +43,47 @@ or
   "result": 17
 }
 ```
+
+An additional task was to enable the worker to be debugged using Python's remote debugger, I've tried to get this working but still can't quite get the networking and the ports working correctly. This is what I've tried so far. I'll provide some screenshots and explanation of my thought process.
+
+I started [here](https://pypi.org/project/rpdb/) at the pypi package pge for rpdb and followed the steps,
+adding a breakpoint to the add function in ```celery_app.py``` by adding the following line
+```import rpdb; rpdb.set_trace()```
+
+When I attempt to call my task the logs are updated as follows
+
+```
+[2022-01-06 10:12:58,344: INFO/MainProcess] celery@worker ready.
+[2022-01-06 10:13:39,537: INFO/MainProcess] Task celery_app.add_task[ef1cc849-9e10-4eb6-8620-60eef01c7d9f] received
+[2022-01-06 10:13:54,548: WARNING/ForkPoolWorker-1] pdb is running on 127.0.0.1:4444
+```
+
+As expected the task is hanging at the point of my breakpoint, if I try to telnet here I expect an error because 127.0.0.1:4444 is local host and it can't be accessed in this way.
+
+Next step was to amend local host to 0.0.0.0 in order to allow access by passing addr and port arguments to rpdb. Which gives us the following updates in the log
+
+```
+[2022-01-06 10:24:53,631: INFO/MainProcess] celery@worker ready.
+[2022-01-06 10:25:31,853: INFO/MainProcess] Task celery_app.add_task[c14deab6-9ade-476f-aaff-fff6ab8615e3] received
+[2022-01-06 10:25:46,872: WARNING/ForkPoolWorker-1] pdb is running on 0.0.0.0:4444
+```
+
+Attempting to telnet in gives the following error
+
+```bash
+telnet 0.0.0.0 4444
+Trying 0.0.0.0...
+telnet: connect to address 0.0.0.0: Connection refused
+telnet: Unable to connect to remote host
+```
+
+Taking on the advice from Matt, I exposed the port 4444 in the dockerfile for the web container. Tried to connect to rpdb and got a similar error to the above
+
+```
+#telnet 0.0.0.0 4444
+Trying 0.0.0.0...
+telnet: connect to address 0.0.0.0: Connection refused
+telnet: Unable to connect to remote host
+```
+
+Next was to map the port on the container in the docker compose

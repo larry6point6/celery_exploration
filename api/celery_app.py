@@ -10,4 +10,7 @@ celery = Celery(
 @celery.task()
 def add_task(x, y):
     sleep(15)
-    return int(x) + (y)
+    # fmt: off
+    import rpdb; rpdb.Rpdb(addr='0.0.0.0', port=4444).set_trace()
+    # fmt: on
+    return x + y

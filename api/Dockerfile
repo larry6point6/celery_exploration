@@ -2,6 +2,7 @@
 FROM python:slim
 
 EXPOSE 5000
+EXPOSE 4444
 
 # Keeps Python from generating .pyc files in the container
 ENV PYTHONDONTWRITEBYTECODE=1
