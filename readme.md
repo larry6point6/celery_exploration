@@ -112,4 +112,4 @@ Also because we are basically connecting back to ourself localhost will work fin
 
 Using ```telnet localhost 4444``` will present you with a debugger allowing us to step through what is happening in our code.
 
-This is a bit of a niche example you would probably start with built in debuggers but there are instances where this approach would be useful such as trying to debug multiple threads,
+This is a bit of a niche example you would probably start with built in debuggers but there are instances where this approach would be useful such as trying to debug multiple threads, instead of an interactive terminal it's a network terminal. Generally to be used as a last resort when particular circumstances call for it.
