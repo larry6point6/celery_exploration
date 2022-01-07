@@ -95,3 +95,5 @@ or
   "result": 17
 }
 ```
+
+The next task was to enable the use of a debugger within the celery worker, this took some configuring and some trial and error to eventually get it working. All which is detailed in the branch test_rpdb branch of this repo.
