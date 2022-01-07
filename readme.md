@@ -106,14 +106,10 @@ There were still some issues with netcat, however telnet seemed to work.
 
 So in order for us to remotely access our debugger we need to use the following command ```telnet localhost 4444```, doing so will present you with a debugger in your terminal, remember to hit your endpoint to ensure that the debugger has something to connect to.
 
-When we invoke local host, we are sending the packet back into yourself, whereas listening
-
-After some extensive testing, it seems ```telnet localhost 4444``` is the winner and also needed to expose the port explicitly in the docker-compose file in our worker rather than the web container
+When we invoke local host, we are sending the packet back into yourself, whereas listening on port 0.0.0.0 is listen to everything, reject all connections unless they have come from the container itself, this needs a deeper dive, find something to help clarify this.
 
 Also because we are basically connecting back to ourself localhost will work fine so there's no need for the addr or port parameters being add to the breakpoint
 
 Using ```telnet localhost 4444``` will present you with a debugger allowing us to step through what is happening in our code.
 
 This is a bit of a niche example you would probably start with built in debuggers but there are instances where this approach would be useful such as trying to debug multiple threads,
-
-remember skills matrix - score out of 10 how you feel coverage per skill, not quality per se by wednesday
