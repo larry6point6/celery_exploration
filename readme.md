@@ -58,7 +58,7 @@ To explore this project, you can use the following commands.
 ```docker-compose build``` in the root directory of the repo, to build the image.
 
 ```docker-compose up -d``` to spin up the containers in the background. Please note if the port 5000 is being used by anything else you will get a port already in use exception, easily solved if it's a docker container by stopping that container like so
-```docker stop <container_id> (first few letters are fine)``` or s
+```docker stop <container_id> (first few letters are fine)``` or cancelling whatever process is running using port 5000.
 
 ```docker-compose ps``` to check the containers have spun up correctly, can also look at the dashboard within Docker Desktop.
 
@@ -94,4 +94,19 @@ or
 {
   "result": 17
 }
+```
+
+The next task was to enable the use of a debugger within the celery worker, this took some configuring and some trial and error to eventually get it working. All which is detailed in the branch test_rpdb branch of this repo.
+
+In order to access your remote debugger all you need is the following command ```telnet localhost 4444```
+and you should be presented with something like the below and be able to use the pdb. Remember to trigger the API by sending a task.
+
+``` bash
+> telnet localhost 4444
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+> /app/celery_app.py(18)add_task()
+-> return result
+(Pdb) 
 ```

@@ -212,3 +212,110 @@ TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
 [2021-12-21 14:06:01,657: INFO/MainProcess] celery@worker ready.
 [2021-12-21 14:17:56,561: INFO/MainProcess] Task celery_app.add_task[322b636a-808d-4d7d-87d3-8caef6973d11] received
 [2021-12-21 14:18:11,638: INFO/ForkPoolWorker-1] Task celery_app.add_task[322b636a-808d-4d7d-87d3-8caef6973d11] succeeded in 15.081349063999824s: 10
+[2021-12-21 16:26:50,852: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-12-21 16:26:50,863: INFO/MainProcess] mingle: searching for neighbors
+[2021-12-21 16:26:51,888: INFO/MainProcess] mingle: all alone
+[2021-12-21 16:26:51,909: INFO/MainProcess] celery@worker ready.
+[2021-12-21 16:27:37,813: INFO/MainProcess] Task celery_app.add_task[80cb5716-f44b-42ae-868b-3c3e4b193b3e] received
+[2021-12-22 11:43:21,464: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-12-22 11:43:21,475: INFO/MainProcess] mingle: searching for neighbors
+[2021-12-22 11:43:22,494: INFO/MainProcess] mingle: all alone
+[2021-12-22 11:43:22,517: INFO/MainProcess] celery@worker ready.
+[2021-12-22 13:49:03,358: INFO/MainProcess] Task celery_app.add_task[b8bf8908-629e-4f97-a686-91f99c7bc855] received
+[2021-12-22 14:22:52,553: INFO/MainProcess] Task celery_app.add_task[a6472ecf-d027-4ec7-a458-9052a8bbd4c8] received
+[2021-12-22 16:16:55,416: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-12-22 16:16:55,425: INFO/MainProcess] mingle: searching for neighbors
+[2021-12-22 16:16:56,447: INFO/MainProcess] mingle: all alone
+[2021-12-22 16:16:56,470: INFO/MainProcess] celery@worker ready.
+[2021-12-22 16:17:55,714: INFO/MainProcess] Task celery_app.add_task[645eca6b-1e31-4f2b-9a18-ec49ab27a114] received
+[2021-12-22 16:19:35,742: ERROR/ForkPoolWorker-1] Task celery_app.add_task[645eca6b-1e31-4f2b-9a18-ec49ab27a114] raised unexpected: gaierror(-2, 'Name or service not known')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 451, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 734, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/celery_app.py", line 15, in add_task
+    rdb.set_trace()
+  File "/usr/local/lib/python3.10/site-packages/celery/contrib/rdb.py", line 188, in set_trace
+    return debugger().set_trace(frame)
+  File "/usr/local/lib/python3.10/site-packages/celery/contrib/rdb.py", line 180, in debugger
+    rdb = _current[0] = Rdb()
+  File "/usr/local/lib/python3.10/site-packages/celery/contrib/rdb.py", line 98, in __init__
+    self._sock, this_port = self.get_avail_port(
+  File "/usr/local/lib/python3.10/site-packages/celery/contrib/rdb.py", line 128, in get_avail_port
+    _sock.bind((host, this_port))
+socket.gaierror: [Errno -2] Name or service not known
+[2021-12-22 16:24:56,180: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-12-22 16:24:56,189: INFO/MainProcess] mingle: searching for neighbors
+[2021-12-22 16:24:57,213: INFO/MainProcess] mingle: all alone
+[2021-12-22 16:24:57,236: INFO/MainProcess] celery@worker ready.
+[2021-12-22 16:25:21,125: INFO/MainProcess] Task celery_app.add_task[6a78e045-64e2-431b-adc8-af1a6ad94ed6] received
+[2021-12-22 16:25:36,173: ERROR/ForkPoolWorker-1] Task celery_app.add_task[6a78e045-64e2-431b-adc8-af1a6ad94ed6] raised unexpected: gaierror(-2, 'Name or service not known')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 451, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 734, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/celery_app.py", line 15, in add_task
+    rdb.set_trace()
+  File "/usr/local/lib/python3.10/site-packages/celery/contrib/rdb.py", line 188, in set_trace
+    return debugger().set_trace(frame)
+  File "/usr/local/lib/python3.10/site-packages/celery/contrib/rdb.py", line 180, in debugger
+    rdb = _current[0] = Rdb()
+  File "/usr/local/lib/python3.10/site-packages/celery/contrib/rdb.py", line 98, in __init__
+    self._sock, this_port = self.get_avail_port(
+  File "/usr/local/lib/python3.10/site-packages/celery/contrib/rdb.py", line 128, in get_avail_port
+    _sock.bind((host, this_port))
+socket.gaierror: [Errno -2] Name or service not known
+[2021-12-22 16:27:45,302: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-12-22 16:27:45,315: INFO/MainProcess] mingle: searching for neighbors
+[2021-12-22 16:27:46,340: INFO/MainProcess] mingle: all alone
+[2021-12-22 16:27:46,360: INFO/MainProcess] celery@worker ready.
+[2021-12-22 16:28:33,306: INFO/MainProcess] Task celery_app.add_task[7e3aa18a-004a-42d7-9156-e04eaa27f3e9] received
+[2022-01-07 14:24:31,226: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-07 14:24:31,237: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-07 14:24:32,264: INFO/MainProcess] mingle: all alone
+[2022-01-07 14:24:32,285: INFO/MainProcess] celery@worker ready.
+[2022-01-07 14:24:38,055: INFO/MainProcess] Task celery_app.add_task[90e1e94c-4972-4826-bb79-f1c0ff91fccc] received
+[2022-01-07 14:26:35,642: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-07 14:26:35,651: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-07 14:26:36,671: INFO/MainProcess] mingle: all alone
+[2022-01-07 14:26:36,690: INFO/MainProcess] celery@worker ready.
+[2022-01-07 14:26:42,466: INFO/MainProcess] Task celery_app.add_task[71439c35-2a10-49e3-9386-db9d42a43fbe] received
+[2022-01-07 14:26:52,485: WARNING/ForkPoolWorker-1] pdb is running on 0.0.0.0:4444
+[2022-01-07 14:27:14,267: ERROR/ForkPoolWorker-1] Task celery_app.add_task[71439c35-2a10-49e3-9386-db9d42a43fbe] raised unexpected: BdbQuit()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 451, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 734, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/celery_app.py", line 18, in add_task
+    return result
+  File "/app/celery_app.py", line 18, in add_task
+    return result
+  File "/usr/local/lib/python3.10/bdb.py", line 90, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/local/lib/python3.10/bdb.py", line 115, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+[2022-01-07 14:28:43,196: INFO/MainProcess] Task celery_app.add_task[053b0291-6ed1-4dd4-b25f-69a68dbcf1b6] received
+[2022-01-07 14:28:53,205: WARNING/ForkPoolWorker-1] pdb is running on 0.0.0.0:4444
+[2022-01-07 14:29:31,499: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-07 14:29:31,510: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-07 14:29:32,513: INFO/MainProcess] mingle: all alone
+[2022-01-07 14:29:32,531: INFO/MainProcess] celery@worker ready.
+[2022-01-07 14:29:35,510: INFO/MainProcess] Task celery_app.add_task[a5fb7ab9-3a75-4867-ae33-fcfa26de4ed0] received
+[2022-01-07 14:29:45,526: WARNING/ForkPoolWorker-1] pdb is running on 0.0.0.0:4444
+[2022-01-07 14:32:41,731: ERROR/ForkPoolWorker-1] Task celery_app.add_task[a5fb7ab9-3a75-4867-ae33-fcfa26de4ed0] raised unexpected: BdbQuit()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 451, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 734, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/celery_app.py", line 18, in add_task
+    return result
+  File "/usr/local/lib/python3.10/bdb.py", line 94, in trace_dispatch
+    return self.dispatch_return(frame, arg)
+  File "/usr/local/lib/python3.10/bdb.py", line 156, in dispatch_return
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
