@@ -97,3 +97,16 @@ or
 ```
 
 The next task was to enable the use of a debugger within the celery worker, this took some configuring and some trial and error to eventually get it working. All which is detailed in the branch test_rpdb branch of this repo.
+
+In order to access your remote debugger all you need is the following command ```telnet localhost 4444```
+and you should be presented with something like the below and be able to use the pdb. Remember to trigger the API by sending a task.
+
+``` bash
+> telnet localhost 4444
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+> /app/celery_app.py(18)add_task()
+-> return result
+(Pdb) 
+```
