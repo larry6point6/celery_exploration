@@ -98,7 +98,9 @@ Connection closed by foreign host.
 
 After asking Matt for some help we started to break down the problem from different levels, starting with the network in order to do this
 
-We went into the container and launched a shell using this command ```docker exec -it <container_name>``` can be accessed either by it's name or id can be found using ```docker ps```. We did a simple check that everything was working in the container we were able to access our debugger as expected. This suggested it might be a network error, something to do with either how I configured the docker compose or maybe something happening in the dockerfile for the web container.
+We went into the container and launched a shell using this command ```docker exec -it <container_name>``` can be accessed either by it's name or id can be found using ```docker ps```. We did a simple check that everything was working in the container we were able to access our debugger as expected. In order to achieve this we needed to install netcat within the docker container, this meant granting root access to our user in the docker container we did this by commenting out the config in the Dockerfile.
+
+This suggested it might be a network error, something to do with either how I configured the docker compose or maybe something happening in the dockerfile for the web container.
 
 Following the initial pattern we tried exposing port 4444 in the dockerfile, this didn't work. Matt then pointed out that in the docker-compose file I had the placed the ports in the wrong service, this was spotted following a docker ps and seeing which ports were mapped where, this was a simple fix of just moving the ports 4444:4444 to the worker service.
 
