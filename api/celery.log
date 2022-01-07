@@ -246,3 +246,178 @@ TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
 [2022-01-06 10:41:23,640: INFO/MainProcess] celery@worker ready.
 [2022-01-06 10:41:30,208: INFO/MainProcess] Task celery_app.add_task[154867cc-f7d1-40f4-aeef-52f02096d31a] received
 [2022-01-06 10:41:45,268: WARNING/ForkPoolWorker-1] pdb is running on 0.0.0.0:4444
+[2022-01-06 11:30:57,796: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-06 11:30:57,805: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-06 11:30:58,822: INFO/MainProcess] mingle: all alone
+[2022-01-06 11:30:58,840: INFO/MainProcess] celery@worker ready.
+[2022-01-06 11:31:39,432: INFO/MainProcess] Task celery_app.add_task[61d79bc0-79e7-40dc-bf76-dd9883258399] received
+[2022-01-06 11:36:51,498: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-06 11:36:51,508: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-06 11:36:52,527: INFO/MainProcess] mingle: all alone
+[2022-01-06 11:36:52,550: INFO/MainProcess] celery@worker ready.
+[2022-01-06 11:38:59,407: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-06 11:38:59,414: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-06 11:39:00,432: INFO/MainProcess] mingle: all alone
+[2022-01-06 11:39:00,451: INFO/MainProcess] celery@worker ready.
+[2022-01-06 11:39:32,616: INFO/MainProcess] Task celery_app.add_task[6b6e8334-8fd2-4755-9643-a321b9e0d0fa] received
+[2022-01-06 11:39:47,651: WARNING/ForkPoolWorker-1] pdb is running on 0.0.0.0:4444
+[2022-01-06 15:07:58,570: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-06 15:07:58,598: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-06 15:07:59,643: INFO/MainProcess] mingle: all alone
+[2022-01-06 15:07:59,676: INFO/MainProcess] celery@worker ready.
+[2022-01-06 15:08:26,118: INFO/MainProcess] Task celery_app.add_task[c3a5b3d2-f86c-46b2-b2f5-5bbaa6defec9] received
+[2022-01-06 15:08:26,142: INFO/MainProcess] Task celery_app.add_task[18decb3e-40d9-4cdd-a871-cfa98c8f2a4c] received
+[2022-01-06 15:08:41,302: WARNING/ForkPoolWorker-1] pdb is running on 0.0.0.0:4444
+[2022-01-06 15:08:41,367: ERROR/ForkPoolWorker-2] Task celery_app.add_task[18decb3e-40d9-4cdd-a871-cfa98c8f2a4c] raised unexpected: OSError(98, 'Address already in use')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 451, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 734, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/celery_app.py", line 15, in add_task
+    import rpdb; rpdb.Rpdb(addr='0.0.0.0', port=4444).set_trace()
+  File "/usr/local/lib/python3.10/site-packages/rpdb/__init__.py", line 46, in __init__
+    self.skt.bind((addr, port))
+OSError: [Errno 98] Address already in use
+[2022-01-06 15:10:32,300: INFO/MainProcess] Task celery_app.add_task[deff384f-d2c0-4221-b055-9dd5fa5232f7] received
+[2022-01-06 15:10:47,385: ERROR/ForkPoolWorker-2] Task celery_app.add_task[deff384f-d2c0-4221-b055-9dd5fa5232f7] raised unexpected: OSError(98, 'Address already in use')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 451, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 734, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/celery_app.py", line 15, in add_task
+    import rpdb; rpdb.Rpdb(addr='0.0.0.0', port=4444).set_trace()
+  File "/usr/local/lib/python3.10/site-packages/rpdb/__init__.py", line 46, in __init__
+    self.skt.bind((addr, port))
+OSError: [Errno 98] Address already in use
+[2022-01-06 15:16:17,232: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-06 15:16:17,252: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-06 15:16:18,266: INFO/MainProcess] mingle: all alone
+[2022-01-06 15:16:18,304: INFO/MainProcess] celery@worker ready.
+[2022-01-06 15:17:25,360: INFO/MainProcess] Task celery_app.add_task[bc4ecaf0-adaa-45d7-b274-6d751fc590e3] received
+[2022-01-06 15:17:40,462: WARNING/ForkPoolWorker-1] pdb is running on 0.0.0.0:4444
+[2022-01-06 15:17:54,374: ERROR/ForkPoolWorker-1] Task celery_app.add_task[bc4ecaf0-adaa-45d7-b274-6d751fc590e3] raised unexpected: BdbQuit()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 451, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 734, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/celery_app.py", line 17, in add_task
+    return result
+  File "/app/celery_app.py", line 17, in add_task
+    return result
+  File "/usr/local/lib/python3.10/bdb.py", line 90, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/local/lib/python3.10/bdb.py", line 115, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+[2022-01-06 15:18:12,178: INFO/MainProcess] Task celery_app.add_task[c0b49598-375f-4fb2-b126-cb817657698b] received
+[2022-01-06 15:18:27,172: WARNING/ForkPoolWorker-1] pdb is running on 0.0.0.0:4444
+[2022-01-06 15:19:18,597: ERROR/ForkPoolWorker-1] Task celery_app.add_task[c0b49598-375f-4fb2-b126-cb817657698b] raised unexpected: BdbQuit()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 451, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 734, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/celery_app.py", line 17, in add_task
+    return result
+  File "/app/celery_app.py", line 17, in add_task
+    return result
+  File "/usr/local/lib/python3.10/bdb.py", line 90, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/local/lib/python3.10/bdb.py", line 115, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+[2022-01-06 15:20:07,984: INFO/MainProcess] Task celery_app.add_task[c65aefde-3b93-43f7-9c9f-5fbd19660aa8] received
+[2022-01-06 15:20:08,033: INFO/MainProcess] Task celery_app.add_task[198f8283-ce6d-44a9-af78-f9d3862a23fc] received
+[2022-01-06 15:20:22,973: WARNING/ForkPoolWorker-1] pdb is running on 0.0.0.0:4444
+[2022-01-06 15:20:23,087: ERROR/ForkPoolWorker-2] Task celery_app.add_task[198f8283-ce6d-44a9-af78-f9d3862a23fc] raised unexpected: OSError(98, 'Address already in use')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 451, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 734, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/celery_app.py", line 15, in add_task
+    import rpdb; rpdb.Rpdb(addr='0.0.0.0', port=4444).set_trace()
+  File "/usr/local/lib/python3.10/site-packages/rpdb/__init__.py", line 46, in __init__
+    self.skt.bind((addr, port))
+OSError: [Errno 98] Address already in use
+[2022-01-06 15:22:48,874: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-06 15:22:48,899: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-06 15:22:49,936: INFO/MainProcess] mingle: all alone
+[2022-01-06 15:22:50,025: INFO/MainProcess] celery@worker ready.
+[2022-01-06 15:24:43,234: INFO/MainProcess] Task celery_app.add_task[6aafb73a-4718-45c5-b43f-562a78e21a17] received
+[2022-01-06 15:24:58,470: WARNING/ForkPoolWorker-1] pdb is running on 0.0.0.0:4444
+[2022-01-06 15:29:33,610: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-06 15:29:33,629: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-06 15:29:34,670: INFO/MainProcess] mingle: all alone
+[2022-01-06 15:29:34,701: INFO/MainProcess] celery@worker ready.
+[2022-01-06 15:30:14,827: INFO/MainProcess] Task celery_app.add_task[6aa8b65f-6be1-4b19-804b-9c1e4c21b1f7] received
+[2022-01-06 15:30:29,854: WARNING/ForkPoolWorker-1] pdb is running on 0.0.0.0:4444
+[2022-01-06 15:31:07,721: ERROR/ForkPoolWorker-1] Task celery_app.add_task[6aa8b65f-6be1-4b19-804b-9c1e4c21b1f7] raised unexpected: UnicodeDecodeError('utf-8', b'\xff\xf4\xff\xfd\x06', 0, 1, 'invalid start byte')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 451, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 734, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/celery_app.py", line 17, in add_task
+    return result
+  File "/app/celery_app.py", line 17, in add_task
+    return result
+  File "/usr/local/lib/python3.10/bdb.py", line 90, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/local/lib/python3.10/bdb.py", line 114, in dispatch_line
+    self.user_line(frame)
+  File "/usr/local/lib/python3.10/pdb.py", line 262, in user_line
+    self.interaction(frame, None)
+  File "/usr/local/lib/python3.10/pdb.py", line 357, in interaction
+    self._cmdloop()
+  File "/usr/local/lib/python3.10/pdb.py", line 322, in _cmdloop
+    self.cmdloop()
+  File "/usr/local/lib/python3.10/cmd.py", line 132, in cmdloop
+    line = self.stdin.readline()
+  File "/usr/local/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+[2022-01-06 16:21:27,003: INFO/MainProcess] Task celery_app.add_task[20238e6b-ebe0-449c-a195-71a3f95e89a9] received
+[2022-01-06 16:21:42,047: ERROR/ForkPoolWorker-1] Task celery_app.add_task[20238e6b-ebe0-449c-a195-71a3f95e89a9] raised unexpected: OSError(98, 'Address already in use')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 451, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 734, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/celery_app.py", line 15, in add_task
+    import rpdb; rpdb.Rpdb(addr='0.0.0.0', port=4444).set_trace()
+  File "/usr/local/lib/python3.10/site-packages/rpdb/__init__.py", line 46, in __init__
+    self.skt.bind((addr, port))
+OSError: [Errno 98] Address already in use
+[2022-01-06 16:22:57,419: INFO/MainProcess] Connected to redis://redis:6379/0
+[2022-01-06 16:22:57,431: INFO/MainProcess] mingle: searching for neighbors
+[2022-01-06 16:22:58,454: INFO/MainProcess] mingle: all alone
+[2022-01-06 16:22:58,475: INFO/MainProcess] celery@worker ready.
+[2022-01-06 16:23:43,433: INFO/MainProcess] Task celery_app.add_task[64a89386-f06f-44e0-bd9e-87299c06e090] received
+[2022-01-06 16:23:58,455: WARNING/ForkPoolWorker-1] pdb is running on 0.0.0.0:4444
+[2022-01-06 17:08:38,842: ERROR/ForkPoolWorker-1] Task celery_app.add_task[64a89386-f06f-44e0-bd9e-87299c06e090] raised unexpected: UnicodeDecodeError('utf-8', b'\xff\xf4\xff\xfd\x06', 0, 1, 'invalid start byte')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 451, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 734, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/celery_app.py", line 17, in add_task
+    return result
+  File "/usr/local/lib/python3.10/bdb.py", line 94, in trace_dispatch
+    return self.dispatch_return(frame, arg)
+  File "/usr/local/lib/python3.10/bdb.py", line 153, in dispatch_return
+    self.user_return(frame, arg)
+  File "/usr/local/lib/python3.10/pdb.py", line 294, in user_return
+    self.interaction(frame, None)
+  File "/usr/local/lib/python3.10/pdb.py", line 357, in interaction
+    self._cmdloop()
+  File "/usr/local/lib/python3.10/pdb.py", line 322, in _cmdloop
+    self.cmdloop()
+  File "/usr/local/lib/python3.10/cmd.py", line 132, in cmdloop
+    line = self.stdin.readline()
+  File "/usr/local/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte

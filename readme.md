@@ -95,3 +95,25 @@ Connected to 0.0.0.0.
 Escape character is '^]'.
 Connection closed by foreign host.
 ```
+
+After asking Matt for some help we started to break down the problem from different levels, starting with the network in order to do this
+
+We went into the container and launched a shell using this command ```docker exec -it <container_name>``` can be accessed either by it's name or id can be found using ```docker ps```. We did a simple check that everything was working in the container we were able to access our debugger as expected. This suggested it might be a network error, something to do with either how I configured the docker compose or maybe something happening in the dockerfile for the web container.
+
+Following the initial pattern we tried exposing port 4444 in the dockerfile, this didn't work. Matt then pointed out that in the docker-compose file I had the placed the ports in the wrong service, this was spotted following a docker ps and seeing which ports were mapped where, this was a simple fix of just moving the ports 4444:4444 to the worker service.
+
+There were still some issues with netcat, however telnet seemed to work.
+
+So in order for us to remotely access our debugger we need to use the following command ```telnet localhost 4444```, doing so will present you with a debugger in your terminal, remember to hit your endpoint to ensure that the debugger has something to connect to.
+
+When we invoke local host, we are sending the packet back into yourself, whereas listening
+
+After some extensive testing, it seems ```telnet localhost 4444``` is the winner and also needed to expose the port explicitly in the docker-compose file in our worker rather than the web container
+
+Also because we are basically connecting back to ourself localhost will work fine so there's no need for the addr or port parameters being add to the breakpoint
+
+Using ```telnet localhost 4444``` will present you with a debugger allowing us to step through what is happening in our code.
+
+This is a bit of a niche example you would probably start with built in debuggers but there are instances where this approach would be useful such as trying to debug multiple threads,
+
+remember skills matrix - score out of 10 how you feel coverage per skill, not quality per se by wednesday
